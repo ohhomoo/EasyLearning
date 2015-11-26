@@ -21,6 +21,12 @@ public class ManageTABLE {
     public static final String COLUMN_LASTDATE = "LastDate";
     public static final String COLUMN_SCORE = "Score";
 
+    public static final String TABLE_CONTENT = "contentTABLE";
+    public static final String COLUMN_VIDEO = "Video";
+    public static final String COLUMN_PATHVIDEO = "PathVideo";
+    public static final String COLUMN_ICONVIDEO = "IconVideo";
+
+
 
 
 
@@ -36,6 +42,49 @@ public class ManageTABLE {
 
 
     }   // Constructor
+
+
+
+    public String[] readAllAata(int intColumn) {
+
+        String[] strResult = null;
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_CONTENT,
+                new  String[]{COLUMN_ID, COLUMN_VIDEO, COLUMN_PATHVIDEO, COLUMN_ICONVIDEO},
+                null, null, null, null, null);
+
+        if (objCursor != null) {
+
+            strResult = new String[objCursor.getCount()];
+            objCursor.moveToFirst();
+
+            for (int i = 0; i < objCursor.getCount(); i++) {
+
+                switch (intColumn) {
+                    case 1:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_VIDEO));
+                        break;
+                    case 2:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PATHVIDEO));
+                        break;
+                    case 3:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_ICONVIDEO));
+                        break;
+                    default:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_VIDEO));
+
+                        break;
+
+                }   //switch
+
+                objCursor.moveToNext();
+
+            }   //for
+
+        }   // if
+        objCursor.close();
+        return strResult;
+
+    }
 
     public String[] searchUser(String strUser) {
 

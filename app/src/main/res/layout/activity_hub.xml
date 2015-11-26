@@ -18,6 +18,7 @@
         <ImageView
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
+            android:onClick="clickListView"
             android:id="@+id/imageView2"
             android:src="@drawable/green"
             android:layout_weight="1"
@@ -26,6 +27,7 @@
         <ImageView
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
+            android:onClick="clickExercise"
             android:id="@+id/imageView3"
             android:src="@drawable/blue"
             android:layout_weight="1"

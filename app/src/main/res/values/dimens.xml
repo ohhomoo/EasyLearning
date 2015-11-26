@@ -6,5 +6,7 @@
     <dimen name="logo">150dp</dimen>
     <dimen name="edittext">250dp</dimen>
     <dimen name="image">300dp</dimen>
+    <dimen name="icon">150dp</dimen>
+    <dimen name="h1">70sp</dimen>
 
 </resources>
