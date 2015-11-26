@@ -112,7 +112,7 @@ public class VideoListView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
 
                 Intent objIntent = new Intent(VideoListView.this, VideoViewActivity.class);
-                objIntent.putExtra("Video", pathVideoInts[i]);
+                objIntent.putExtra("Video", i);
                 startActivity(objIntent);
 
             }   // event
