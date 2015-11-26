@@ -48,10 +48,39 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             //No Space
+            checkUser();
 
         }
 
     }   // clickLogin
+
+    private void checkUser() {
+
+        try {
+
+            String[] strMyResult = objManageTABLE.searchUser(userString);
+
+            //Check Password
+
+            if (passwordString.equals(strMyResult[2])) {
+
+                //Intent to Service
+
+            } else {
+
+                //Password False
+                MyAlertDialog objAlertDialog = new MyAlertDialog();
+                objAlertDialog.myDialog(MainActivity.this, "Password False", "Please Try Again Password False");
+
+            }
+
+        } catch (Exception e) {
+
+            MyAlertDialog objMyAlertDialog = new MyAlertDialog();
+            objMyAlertDialog.myDialog(MainActivity.this, "No This User", "No" + userString + "in my Database");
+        }
+
+    }   // checkUser
 
 
 }   // Main Class
