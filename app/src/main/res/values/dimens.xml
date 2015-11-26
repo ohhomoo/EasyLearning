@@ -5,5 +5,6 @@
 
     <dimen name="logo">150dp</dimen>
     <dimen name="edittext">250dp</dimen>
+    <dimen name="image">300dp</dimen>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.ezgenius.easylearning;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
             if (passwordString.equals(strMyResult[2])) {
 
                 //Intent to Service
+                Intent objIntent = new Intent(MainActivity.this, HubActivity.class);
+                startActivity(objIntent);
+                finish();
 
             } else {
 
